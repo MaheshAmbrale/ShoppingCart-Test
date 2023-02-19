@@ -9,26 +9,23 @@ import "./App.css";
 
 const App = () => {
   return (
-    <div>
+    <div className="main--component">
       <div className="top">
         <div className="title">MYCOOLSHOP.COM</div>
         <Headers />
       </div>
-      <div className="filters--and--container">
-        <SideBarFilters />
+      <div className="top--hidden"></div>
 
-        <Routes>
-          <Route exact path="/" element={<AllProducts />} />
+      <SideBarFilters />
 
-          <Route
-            exact
-            path="/featuredProducts"
-            element={<FeaturedProducts />}
-          />
+      <Routes>
+        <Route exact path="/" element={<AllProducts />} />
 
-          <Route exact path="/cart" element={<Cart />} />
-        </Routes>
-      </div>
+        <Route exact path="/featuredProducts" element={<FeaturedProducts />} />
+
+        <Route exact path="/cart" element={<Cart />} />
+      </Routes>
+      {/* </div> */}
     </div>
   );
 };

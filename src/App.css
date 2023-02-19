@@ -1,4 +1,15 @@
-.top {
+.main--component {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  grid-template-areas:
+    "one one one one one"
+    "two three three three three"
+    "two three three three three";
+}
+
+.top,
+.top--hidden {
   position: fixed;
   background-color: white;
   top: 0;
@@ -10,6 +21,11 @@
   flex-direction: column;
   align-items: center;
   z-index: 99;
+}
+.top--hidden {
+  position: relative !important;
+  grid-area: one;
+  z-index: 30;
 }
 
 .nav {
@@ -36,6 +52,10 @@ li:last-of-type {
   font-family: system-ui;
 }
 
+.featured--products {
+  margin-left: 10px;
+}
+
 .isfocus {
   font-weight: bold !important;
 }
@@ -52,9 +72,9 @@ li:last-of-type {
 }
 
 .sideBar {
-  margin-top: 10%;
   width: 20%;
   left: 0;
+  grid-area: two;
 }
 
 .sidebar--title {
@@ -88,9 +108,8 @@ li:last-of-type {
 .products--container {
   display: flex;
   right: 0;
-  width: 80%;
   flex-wrap: wrap;
-  margin-top: 8%;
+  grid-area: three;
 }
 
 .single--product--container {
